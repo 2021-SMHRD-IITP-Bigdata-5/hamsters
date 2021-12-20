@@ -21,13 +21,16 @@ public class test extends HttpServlet {
 		ResultSet rs = null;
 		
 		try {
-			Class.forName("project-db-stu.ddns.net");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("클래스파일 로딩완료");
 
 			// 3. DB에서 사용하는 ID/PW를 인증
-			String url = "jdbc:oracle:thin:@127.0.0.1:1524";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524";
 			String dbid = "cgi_7_1_1216";
 			String dbpw = "smhrd1";
+//			String url = "jdbc:oracle:thin:@127.0.0.1:1524";
+//			String dbid = "cgi_7_1_1216";
+//			String dbpw = "smhrd1";
 
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 
