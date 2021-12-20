@@ -9,6 +9,8 @@ public class ttest {
 		System.out.println("테스트");
 		System.out.println("테스트");
 		System.out.println("테스트");
+		System.out.println("테스트");
+		System.out.println("테스트");
 	}
 
 }
