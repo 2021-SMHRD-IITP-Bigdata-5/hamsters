@@ -28,9 +28,6 @@ public class test extends HttpServlet {
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524";
 			String dbid = "cgi_7_1_1216";
 			String dbpw = "smhrd1";
-//			String url = "jdbc:oracle:thin:@127.0.0.1:1524";
-//			String dbid = "cgi_7_1_1216";
-//			String dbpw = "smhrd1";
 
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 
@@ -42,5 +39,6 @@ public class test extends HttpServlet {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 }
