@@ -18,7 +18,7 @@ public class newDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			String url = "jdbc:oracle:thin:@127.0.0.1:1521";
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1521";
 			String dbid = "hr";
 			String dbpw = "hr";
 			
