@@ -34,7 +34,7 @@ public class LoginService implements Command {
 			
 			session.setAttribute("dto", dto);
 			
-			nextpage = "update.jsp";
+			nextpage = "LoginSuccess.jsp";
 			
 			}else{
 				
