@@ -68,7 +68,6 @@ public class memberDAO {
 			String sql = "insert into t_member values (?, ?, ?, ?, ?, ?, ?, sysdate)";
 			// 5. SQL명령문을 준비
 			psmt = conn.prepareStatement(sql);
-
 			psmt.setString(1, dto.getMemId());
 			psmt.setString(2, dto.getMemPw());
 			psmt.setString(3, dto.getMemName());
@@ -77,6 +76,7 @@ public class memberDAO {
 			psmt.setString(6, dto.getMemPhone());
 			psmt.setString(7, dto.getMemStatus());
 
+			System.out.println(dto.getMemName());
 			// 6. SQL명령문 실행
 			cnt = psmt.executeUpdate();
 
@@ -121,10 +121,13 @@ public class memberDAO {
 			String sql = "update member_message set pw = ? ,name= ?,company = ?, email = ?, phone = ?, status= ? where id = ?";
 			psmt = conn.prepareStatement(sql);
 
-			psmt.setString(1, dto.getPw());
-			psmt.setString(2, dto.getTel());
-			psmt.setString(3, dto.getEmail());
-			psmt.setString(4, dto.getId());
+			psmt.setString(1, dto.getMemPw());
+			psmt.setString(2, dto.getMemName());
+			psmt.setString(3, dto.getMemCompany());
+			psmt.setString(4, dto.getMemEmail());
+			psmt.setString(5, dto.getMemPhone());
+			psmt.setString(6, dto.getMemStatus());
+			psmt.setString(7, dto.getMemId());
 
 			// 6. SQL명령문 실행
 			cnt = psmt.executeUpdate();
@@ -185,7 +188,7 @@ public class memberDAO {
 			getConn();
 
 			
-			String sql = "select * from member where id = ?";
+			String sql = "select * from t_member where mem_Id = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
 			

@@ -187,65 +187,9 @@ footer .copyright-wrap span{
     </style>
 </head>
 <body>
-	<form action="JoinCon.do" method="post">
-    <div class="main-container">
-      <div class="main-wrap">
-      <header>
-         <div class="sel-lang-wrap">
-            
-         </div>
-         <div class="logo-wrap">
-            <img src ="https://flow.team/flow-renewal/view/homepage/assets/images/common/logo.svg" width ="100" height="25">
-         </div>
-      </header>
-      <section class="login-input-section-wrap2">
-         <div id="idCheck" class="login-input-wrap">   
-         <input id="idCheck" placeholder="Id(필수입력)" type="text" name="memId"></input>
-         <button id="check" type="button" onclick="check()">중복</button>
-         </div>
-     </section>
-      <section class="login-input-section-wrap">
-         <div>
-            <p id="result"></p>
-         </div>
-         <div class="login-input-wrap password-wrap">   
-            <input placeholder="Password(필수입력)" type="password" name="memPw"></input>
-         </div>
-         <div class="login-input-wrap">   
-<<<<<<< HEAD
-         <input placeholder="Te)" type="text" name="tel"></input>
-=======
-         <input placeholder="Name(필수입력)" type="text" name="memName"></input>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-5/hamsters.git
-         </div>
-         <div class="login-input-wrap">   
-         <input placeholder="Company" type="text" name="memCompany"></input>
-         </div>
-         <div class="login-input-wrap">   
-         <input placeholder="Email(필수입력)" type="text" name="memEmail"></input>
-         </div>
-         <div class="login-input-wrap">   
-         <input placeholder="Tel(필수입력)" type="text" name="memPhone"></input>
-         </div>
-         <div class="login-input-wrap">   
-         <input placeholder="소개글" type="text" name="memStatus"></input>
-         </div>
-         <div class="login-button-wrap">
-            <input type="submit" value="회원가입">
-         </div>
-         </form>
-      </section>
-      
-      <footer>
-         <div class="copyright-wrap">
-         <span>   <img src ="https://flow.team/flow-renewal/view/homepage/assets/images/common/logo.svg" width ="100" height="25"> Copyright © HAMSTERS Corp. All Rights Reserved.</span>
-         </div>
-      </footer>
-      </div>
-   </div>
    <script src="//code.jquery.com/jquery-latest.min.js"></script>
    <script type="text/javascript">
-      function check() {
+      function checkId() {
          $.ajax({
             url : "check.do",
             type : "get",
@@ -267,5 +211,58 @@ footer .copyright-wrap span{
          });
       }
    </script>
+	<form action="JoinCon.do" method="post">
+    <div class="main-container">
+      <div class="main-wrap">
+      <header>
+         <div class="sel-lang-wrap">
+            
+         </div>
+         <div class="logo-wrap">
+            <img src ="https://flow.team/flow-renewal/view/homepage/assets/images/common/logo.svg" width ="100" height="25">
+         </div>
+      </header>
+      <section class="login-input-section-wrap2">
+         <div id="idCheck" class="login-input-wrap">   
+         <input id="idCheck" placeholder="Id(필수입력)" type="text" name="id"></input>
+         <button id="check" type="button" onclick="checkId()">중복</button>
+         </div>
+     </section>
+      <section class="login-input-section-wrap">
+         <div>
+            <p id="result"></p>
+         </div>
+         <div class="login-input-wrap password-wrap">   
+            <input placeholder="Password(필수입력)" type="password" name="pw"></input>
+         </div>
+         <div class="login-input-wrap">   
+         <input placeholder="Name(필수입력)" type="text" name="name"></input>
+         </div>
+         <div class="login-input-wrap">   
+         <input placeholder="Company" type="text" name="com"></input>
+         </div>
+         <div class="login-input-wrap">   
+         <input placeholder="Email(필수입력)" type="text" name="email"></input>
+         </div>
+         <div class="login-input-wrap">   
+         <input placeholder="Tel(필수입력)" type="text" name="phone"></input>
+         </div>
+         <div class="login-input-wrap">   
+         <input placeholder="소개글" type="text" name="statu"></input>
+         </div>
+         <div class="login-button-wrap">
+            <input type="submit" value="회원가입">
+         </div>
+         </form>
+      </section>
+      
+      <footer>
+         <div class="copyright-wrap">
+         <span>   <img src ="https://flow.team/flow-renewal/view/homepage/assets/images/common/logo.svg" width ="100" height="25"> Copyright © HAMSTERS Corp. All Rights Reserved.</span>
+         </div>
+      </footer>
+      </div>
+   </div>
+   
 </body>
 </html>

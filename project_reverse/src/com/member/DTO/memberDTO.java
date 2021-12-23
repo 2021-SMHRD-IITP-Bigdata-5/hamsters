@@ -33,8 +33,11 @@ public class memberDTO {
 		this.memPhone = memPhone;
 	}
 
+	
+
 	public memberDTO(String memId, String memPw, String memName, String memCompany, String memEmail, String memPhone,
 			String memStatus) {
+		super();
 		this.memId = memId;
 		this.memPw = memPw;
 		this.memName = memName;
@@ -43,6 +46,8 @@ public class memberDTO {
 		this.memPhone = memPhone;
 		this.memStatus = memStatus;
 	}
+
+
 
 	public memberDTO(String memId, String memPw) {
 		super();

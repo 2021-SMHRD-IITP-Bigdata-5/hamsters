@@ -17,13 +17,13 @@ public class JoinService implements Command {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		String memId = request.getParameter("memId");
-		String memPw = request.getParameter("memPw");
-		String memName = request.getParameter("memName");
-		String memCompany = request.getParameter("memCompany");
-		String memEmail = request.getParameter("memEmail");	
-		String memPhone = request.getParameter("memPhone");	
-		String memStatus = request.getParameter("memStatus");	
+		String memId = request.getParameter("id");
+		String memPw = request.getParameter("pw");
+		String memName = request.getParameter("name");
+		String memCompany = request.getParameter("com");
+		String memEmail = request.getParameter("email");	
+		String memPhone = request.getParameter("phone");	
+		String memStatus = request.getParameter("statu");	
 		
 		memberDTO dto = new memberDTO(memId, memPw, memName, memCompany, memEmail, memPhone, memStatus);
 		
