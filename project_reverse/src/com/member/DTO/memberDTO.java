@@ -23,13 +23,20 @@ public class memberDTO {
     // 회원 상태 
     private String memStatus;
 
-    // 관리자 여부 
-    private String adminYesno;
     
     
 
-    public memberDTO(String memId, String memPw, String memName, String memCompany, String memEmail, String memPhone,
-			String memStatus, String adminYesno) {
+    public memberDTO(String memId, String memPw, String memEmail, String memPhone) {
+		this.memId = memId;
+		this.memPw = memPw;
+		this.memEmail = memEmail;
+		this.memPhone = memPhone;
+	}
+
+	
+
+	public memberDTO(String memId, String memPw, String memName, String memCompany, String memEmail, String memPhone,
+			String memStatus) {
 		super();
 		this.memId = memId;
 		this.memPw = memPw;
@@ -38,9 +45,10 @@ public class memberDTO {
 		this.memEmail = memEmail;
 		this.memPhone = memPhone;
 		this.memStatus = memStatus;
-		this.adminYesno = adminYesno;
 	}
     
+
+
 
 	public memberDTO(String memId, String memPw) {
 		super();
@@ -105,13 +113,6 @@ public class memberDTO {
     }
 
 
-    public String getAdminYesno() {
-        return adminYesno;
-    }
-
-    public void setAdminYesno(String adminYesno) {
-        this.adminYesno = adminYesno;
-    }
 
 	
 }
