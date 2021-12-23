@@ -215,7 +215,7 @@ footer .copyright-wrap span{
             <input placeholder="Password(필수입력)" type="password" name="pw"></input>
          </div>
          <div class="login-input-wrap">   
-         <input placeholder="Tel" type="text" name="tel"></input>
+         <input placeholder="Te)" type="text" name="tel"></input>
          </div>
          <div class="login-input-wrap">   
          <input placeholder="Company" type="text" name="company"></input>
