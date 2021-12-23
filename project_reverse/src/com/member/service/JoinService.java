@@ -17,14 +17,15 @@ public class JoinService implements Command {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		String id = request.getParameter("id");
-		String intro = request.getParameter("intro");
-		String email = request.getParameter("email");
-		String pw = request.getParameter("pw");
-		String tel = request.getParameter("tel");	
-		String company = request.getParameter("company");	
+		String memId = request.getParameter("memId");
+		String memPw = request.getParameter("memPw");
+		String memName = request.getParameter("memName");
+		String memCompany = request.getParameter("memCompany");
+		String memEmail = request.getParameter("memEmail");	
+		String memPhone = request.getParameter("memPhone");	
+		String memStatus = request.getParameter("memStatus");	
 		
-		memberDTO dto = new memberDTO(id, email, pw, tel, company, intro);
+		memberDTO dto = new memberDTO(memId, memPw, memName, memCompany, memEmail, memPhone, memStatus);
 		
 		memberDAO dao = new memberDAO();
 		int cnt = dao.Join(dto);

@@ -65,7 +65,7 @@ public class memberDAO {
 		try {
 			getConn();
 			// --------------DB연결------
-			String sql = "insert into t_member values (?, ?, ?, ?, ?, ?, ?, sysdate, ?)";
+			String sql = "insert into t_member values (?, ?, ?, ?, ?, ?, ?, sysdate)";
 			// 5. SQL명령문을 준비
 			psmt = conn.prepareStatement(sql);
 
@@ -76,7 +76,6 @@ public class memberDAO {
 			psmt.setString(5, dto.getMemEmail());
 			psmt.setString(6, dto.getMemPhone());
 			psmt.setString(7, dto.getMemStatus());
-			psmt.setString(8, dto.getMemStatus());
 
 			// 6. SQL명령문 실행
 			cnt = psmt.executeUpdate();
@@ -149,21 +148,21 @@ public class memberDAO {
 			
 			String sql = "select * from t_member where id = ?";
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, dto1.getId());
-			System.out.println(dto1.getId());
+			psmt.setString(1, dto1.getMemId());
 			
 			
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
-				String getid = rs.getString(1);
-//				String getemail = rs.getString(2);
-				String getpw = rs.getString(3);
-//				String gettel = rs.getString(4);
-//				String getcompany = rs.getString(5);
-//				String getintro = rs.getString(6);
-				if(dto1.getPw().equals(getpw)) {
-					dto = new memberDTO(dto1.getId(), dto1.getPw());
+				String getId = rs.getString(1);
+				String getPw = rs.getString(2);
+				String getName = rs.getString(3);
+				String getCom = rs.getString(4);
+				String getEmail = rs.getString(5);
+				String getPhone = rs.getString(6);
+				String getStat = rs.getString(7);
+				if(dto1.getMemPw().equals(getPw)) {
+					dto = new memberDTO(dto1.getMemId(), getPw, getName, getCom, getEmail, getPhone, getStat);
 				}
 				
 			}

@@ -17,14 +17,13 @@ public class LoginService implements Command {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		String memId = request.getParameter("memId");
+		String memPw = request.getParameter("memPw");
 		
-		memberDTO dto1 = new memberDTO(id, pw);
+		memberDTO dto1 = new memberDTO(memId, memPw);
 		
 		memberDAO dao = new memberDAO();
 		
-		System.out.println(id + pw);
 		memberDTO dto = dao.Login(dto1);
 		
 		String nextpage = "";
