@@ -21,7 +21,7 @@ public class UpdateService implements Command {
 		HttpSession session = request.getSession();
 		memberDTO dto = (memberDTO)session.getAttribute("dto");
 		
-		String id = dto.getId();
+		String id = dto.getMemId();
 		String pw = request.getParameter("pw");
 		String tel = request.getParameter("tel");	
 		String email = request.getParameter("email");

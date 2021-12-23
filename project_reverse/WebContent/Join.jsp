@@ -200,7 +200,7 @@ footer .copyright-wrap span{
       </header>
       <section class="login-input-section-wrap2">
          <div id="idCheck" class="login-input-wrap">   
-         <input id="idCheck" placeholder="Id(필수입력)" type="text" name="id"></input>
+         <input id="idCheck" placeholder="Id(필수입력)" type="text" name="memId"></input>
          <button id="check" type="button" onclick="check()">중복</button>
          </div>
      </section>
@@ -208,20 +208,27 @@ footer .copyright-wrap span{
          <div>
             <p id="result"></p>
          </div>
-         <div class="login-input-wrap">   
-         <input placeholder="Email(필수입력)" type="text" name="email"></input>
-         </div>
          <div class="login-input-wrap password-wrap">   
-            <input placeholder="Password(필수입력)" type="password" name="pw"></input>
+            <input placeholder="Password(필수입력)" type="password" name="memPw"></input>
          </div>
          <div class="login-input-wrap">   
+<<<<<<< HEAD
          <input placeholder="Te)" type="text" name="tel"></input>
+=======
+         <input placeholder="Name(필수입력)" type="text" name="memName"></input>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-5/hamsters.git
          </div>
          <div class="login-input-wrap">   
-         <input placeholder="Company" type="text" name="company"></input>
+         <input placeholder="Company" type="text" name="memCompany"></input>
          </div>
          <div class="login-input-wrap">   
-         <input placeholder="소개글" type="text" name="intro"></input>
+         <input placeholder="Email(필수입력)" type="text" name="memEmail"></input>
+         </div>
+         <div class="login-input-wrap">   
+         <input placeholder="Tel(필수입력)" type="text" name="memPhone"></input>
+         </div>
+         <div class="login-input-wrap">   
+         <input placeholder="소개글" type="text" name="memStatus"></input>
          </div>
          <div class="login-button-wrap">
             <input type="submit" value="회원가입">
@@ -247,10 +254,10 @@ footer .copyright-wrap span{
             },
             success : function(res) {
                if (res == "true") {
-                  $("#result").html("중복된 ID입니다. ").css("color", "red");
+                  $("#result").html("중복된 ID입니다. 다른 ID를 입력해주세요.").css("color", "red");
                } else {
                   $("#result").html("사용가능한 ID입니다. ")
-                        .css("color", "green");
+                        .css("color", "#623ad6");
                }
 
             },

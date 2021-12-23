@@ -26,7 +26,19 @@ public class memberDTO {
     
     
 
+<<<<<<< HEAD
     public memberDTO(String memId, String memPw, String memName, String memCompany, String memEmail, String memPhone,
+=======
+    public memberDTO(String memId, String memPw, String memEmail, String memPhone) {
+		super();
+		this.memId = memId;
+		this.memPw = memPw;
+		this.memEmail = memEmail;
+		this.memPhone = memPhone;
+	}
+
+	public memberDTO(String memId, String memPw, String memName, String memCompany, String memEmail, String memPhone,
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-5/hamsters.git
 			String memStatus) {
 		super();
 		this.memId = memId;
@@ -101,6 +113,9 @@ public class memberDTO {
     }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-5/hamsters.git
 	
 }
