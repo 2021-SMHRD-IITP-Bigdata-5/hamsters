@@ -118,7 +118,7 @@ public class memberDAO {
 		try {
 			getConn();
 
-			String sql = "update member_message set pw = ? , tel = ?, email = ? where id = ?";
+			String sql = "update member_message set pw = ? ,name= ?,company = ?, email = ?, phone = ?, status= ? where id = ?";
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, dto.getPw());

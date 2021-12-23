@@ -221,13 +221,11 @@ footer .copyright-wrap span{
     <div class="main-container">
       <div class="main-wrap">
       <header>
-         
          <div class="logo-wrap">
             <img src ="https://flow.team/flow-renewal/view/homepage/assets/images/common/logo.svg" >
          </div>
       </header>
       <section class="login-input-section-wrap">
-         <form action="#">
             <div class="login-input-wrap">   
                <input placeholder="Id" type="text" name="memId"></input>
             </div>
