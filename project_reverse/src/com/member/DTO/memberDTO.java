@@ -40,6 +40,7 @@ public class memberDTO {
 		this.memStatus = memStatus;
 		this.adminYesno = adminYesno;
 	}
+    
 
 	public memberDTO(String memId, String memPw) {
 		super();
