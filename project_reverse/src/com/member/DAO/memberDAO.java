@@ -149,7 +149,7 @@ public class memberDAO {
 			getConn();
 
 			
-			String sql = "select * from t_member where id = ?";
+			String sql = "select * from t_member where mem_id = ?";
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto1.getMemId());
 			

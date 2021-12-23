@@ -227,10 +227,10 @@ footer .copyright-wrap span{
       </header>
       <section class="login-input-section-wrap">
             <div class="login-input-wrap">   
-               <input placeholder="Id" type="text" name="memId"></input>
+               <input placeholder="Id" type="text" name="id"></input>
             </div>
             <div class="login-input-wrap password-wrap">   
-               <input placeholder="Password" type="password" name="memPw"></input>
+               <input placeholder="Password" type="password" name="pw"></input>
             </div>
             <div class="login-button-wrap">            
                 <input id="inp" type="submit" value="로그인">   

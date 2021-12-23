@@ -17,8 +17,8 @@ public class LoginService implements Command {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		String memId = request.getParameter("memId");
-		String memPw = request.getParameter("memPw");
+		String memId = request.getParameter("id");
+		String memPw = request.getParameter("pw");
 		
 		memberDTO dto1 = new memberDTO(memId, memPw);
 		
@@ -34,7 +34,7 @@ public class LoginService implements Command {
 			
 			session.setAttribute("dto", dto);
 			
-			nextpage = "LoginSuccess.jsp";
+			nextpage = "update.jsp";
 			
 			}else{
 				
