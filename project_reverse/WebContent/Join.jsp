@@ -317,7 +317,7 @@ footer .copyright-wrap span{
 	            },
 	            error : function() {
 	               alert("요청실패")
-	            }
+	            }//고쳤습니다
 	         });
 	});
 </script>   
