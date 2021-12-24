@@ -6,9 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+
 </head>
 <body>
 <%memberDTO dto = (memberDTO)session.getAttribute("dto");%>
 	<input value="dfd">
+	
+
+
 </body>
 </html>
