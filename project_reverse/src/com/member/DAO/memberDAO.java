@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import com.member.DTO.memberDTO;
+
+import team.DTO.teamDTO;
 	
 public class memberDAO {
 	Connection conn = null;
@@ -18,6 +20,7 @@ public class memberDAO {
 	int cnt = 0;
 	memberDTO dto = null;
 	private boolean check;
+	teamDTO dto1 = null;
 	
 	public void getConn() {
 		
@@ -205,7 +208,24 @@ public class memberDAO {
 		
 		return check;
 	}
-
+	public int createTeam(teamDTO dto) {
+		try {
+			getConn();
+			String sql = "INSERT INTO t_team (team_name, team_content, reg_date, mem_id) VALUES (?, ?, sysdate, ?)";
+			psmt= conn.prepareStatement(sql);
+			psmt.setString(1, dto.getTeamName());
+			psmt.setString(2, dto.getTeamContent());
+			psmt.setString(3, dto.getMemId());
+			
+			cnt = psmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("클래스파일 로딩실패");
+			e.printStackTrace();
+		}finally {
+			close();
+		}return cnt;
+	}
 	
 }
 
