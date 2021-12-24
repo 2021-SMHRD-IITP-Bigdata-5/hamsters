@@ -128,7 +128,7 @@ div>button#check{
    cursor : pointer;
    
 }
-.login-button-wrap input{
+.login-button-wrap button{
    width: 465px;
    height :48px;
    font-size: 18px;
@@ -190,6 +190,7 @@ footer .copyright-wrap span{
    <script src="//code.jquery.com/jquery-latest.min.js"></script>
    <script type="text/javascript">
       function checkId() {
+    	
          $.ajax({
             url : "check.do",
             type : "get",
@@ -209,7 +210,12 @@ footer .copyright-wrap span{
                alert("요청실패")
             }
          });
+       
       }
+      
+     
+    
+      
    </script>
 	<form action="JoinCon.do" method="post">
     <div class="main-container">
@@ -224,7 +230,7 @@ footer .copyright-wrap span{
       </header>
       <section class="login-input-section-wrap2">
          <div id="idCheck" class="login-input-wrap">   
-         <input id="idCheck" placeholder="Id(필수입력)" type="text" name="id"></input>
+         <input id="idCheck" class="idvalue" placeholder="Id(필수입력)" type="text" name="id"></input>
          <button id="check" type="button" onclick="checkId()">중복</button>
          </div>
      </section>
@@ -233,7 +239,7 @@ footer .copyright-wrap span{
             <p id="result"></p>
          </div>
          <div class="login-input-wrap password-wrap">   
-            <input placeholder="Password(필수입력)" type="password" name="pw"></input>
+            <input id="Password" placeholder="Password(필수입력)" type="password" name="pw"></input>
          </div>
          <div class="login-input-wrap">   
          <input placeholder="Name(필수입력)" type="text" name="name"></input>
@@ -251,18 +257,70 @@ footer .copyright-wrap span{
          <input placeholder="소개글" type="text" name="statu"></input>
          </div>
          <div class="login-button-wrap">
-            <input type="submit" value="회원가입">
+            <button class="register_btn">회원가입</button>
          </div>
          </form>
       </section>
       
       <footer>
          <div class="copyright-wrap">
-         <span>   <img src ="https://flow.team/flow-renewal/view/homepage/assets/images/common/logo.svg" width ="100" height="25"> Copyright © HAMSTERS Corp. All Rights Reserved.</span>
+         <span><img src ="https://flow.team/flow-renewal/view/homepage/assets/images/common/logo.svg" width ="100" height="25"> Copyright © HAMSTERS Corp. All Rights Reserved.</span>
          </div>
       </footer>
       </div>
    </div>
-   
+<script>
+	$(".register_btn").click(function(e) {
+		
+		let account = $(".idvalue").val();
+	    let password = $("#Password").val();
+	   
+	        var idcheck = /^[a-zA-Z]{1}[a-zA-Z0-9_]{4,11}$/.test(account);
+	        var pscheck = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,}$/.test(password);
+
+
+	        if (account.trim() === "") {
+	            alert("ID 입력!!");
+	            return false;
+	        }
+
+	        if(!idcheck){
+	            alert("아이디는 5 ~ 12자, 영문, 숫자가 포함되어야 합니다.");
+	            return false;
+	        }
+
+	        if (password.trim() === "") {
+	            alert("비밀번호 입력!!");
+	            return false;
+	        }
+
+	        if(!pscheck){
+	            alert("비밀번호는 최소 8자, 하나 이상의 소문자, 숫자, 특수문자가 포함되어야 합니다.");
+	            return false;
+	        }
+	        
+	        $.ajax({ 
+	            url : "JoinCon.do",
+	            type : "post",
+	            data : {
+	               "id" : account,
+	               "password" : password
+	            },
+	            success : function(res) {
+	               if (res == "true") {
+	                  $("#result").html("중복된 ID입니다. 다른 ID를 입력해주세요.").css("color", "red");
+	               } else {
+	                  $("#result").html("사용가능한 ID입니다. ")
+	                        .css("color", "#623ad6");
+	               }
+
+	            },
+	            error : function() {
+	               alert("요청실패")
+	            }//고쳤습니다
+	         });
+	});
+</script>   
 </body>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-5/hamsters.git
 </html>

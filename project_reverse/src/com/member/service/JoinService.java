@@ -23,7 +23,8 @@ public class JoinService implements Command {
 		String memCompany = request.getParameter("com");
 		String memEmail = request.getParameter("email");	
 		String memPhone = request.getParameter("phone");	
-		String memStatus = request.getParameter("statu");	
+		String memStatus = request.getParameter("statu");
+		
 		
 		memberDTO dto = new memberDTO(memId, memPw, memName, memCompany, memEmail, memPhone, memStatus);
 		

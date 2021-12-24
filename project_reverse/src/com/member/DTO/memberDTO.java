@@ -46,6 +46,7 @@ public class memberDTO {
 		this.memPhone = memPhone;
 		this.memStatus = memStatus;
 	}
+    
 
 
 
