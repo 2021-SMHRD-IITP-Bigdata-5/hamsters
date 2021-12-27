@@ -1,4 +1,5 @@
 
+<%@page import="com.member.DTO.t_teamDTO"%>
 <%@page import="com.member.DTO.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -25,6 +26,8 @@
   
   <!-- modal style -->
   <style>
+  
+  
 #modal {
   display: none;
   width:100%;
@@ -39,6 +42,9 @@
 #modal h2 {
   margin:0;   
   font-size: 25px;
+  color: black;
+	background-color: white;
+	font-weight: bold;
 }
 
  #modal button {
@@ -51,7 +57,7 @@
   top: 15%;
   width:550px;
   height: 400px;
-  margin:100px auto;
+  margin:0px auto;
   padding:40px;
   padding-right:0px;
   background:#fff;
@@ -86,7 +92,7 @@ button#submit {
    heigth: 50px;
    font-size: 20px;
     right : 15%;
-    top : 75%;
+    top : 80%;
     transform: translate(-50%, -50%);
    border: none;
    border-radius: 5px;
@@ -94,7 +100,9 @@ button#submit {
 
 
 input#title{
-	margin: 10px;
+	position: absolute;
+	top : 25%;
+	margin: 0px;
 	background: transparent;
 	width: 400px;
 	height: 40px;
@@ -107,14 +115,104 @@ input#title::placeholder{
 }
 
 input#content {
+	position: absolute;
+	top : 40%;
 	border: solid 1px;
 	border-color: grey;
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
 	margin-bottom: 10px;
 	width: 400px;
 	height: 100px;
 	border-radius: 10px;
+}
+
+div.team_icon{
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	border: none;
+	background-color: green;
+	display:inline-block;
+	
+}
+
+h3.team_name{
+	font-weight: bold;
+	display:inline-block;
+}
+
+h6.team_attri{
+	display:inline-block;
+}
+
+ul#menutap{
+	display: flex;
+	flex-flow: row nowrap;
+	align-content: space-between;	
+}
+ul#menutap>li{
+	display: inline-block;
+    margin: 0 10px;
+    align-content: flex-end;
+}
+
+ul#menutap>li>a{
+	text-decoration: none;
+    color: black;
+}
+
+div.row1{
+	position: relative;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 170px;
+}
+
+div.row{
+	margin-top: 20px;
+}
+
+div.content{
+	padding-left: 40px;
+	padding-top: 40px;
+
+}
+
+div.newContentsBox{
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid grey;
+	width: 800px;
+	height: 100px;
+	padding-left: 10px;
+	
+}
+
+ul.newContentsBox{
+	display: flex;
+	flex-flow: row nowrap;
+	place-content: space-evenly;	
+}
+
+li.newContentsBox{
+	display: inline-block;
+    margin: auto;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+li.newContentsBox>button{
+	background-color: white;
+	border: none;
+}
+
+div.title{
+	background-color: #4B49AC;
 }
 
 
@@ -381,13 +479,14 @@ input#content {
       </nav>
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper" style="">
-          <div class="row">
+        <div class="content-wrapper" style="padding: 0px;">
+          <div class="row1" style="">
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">내 프로젝트</h3>
-                  <h6 class="font-weight-normal mb-0"> 참여중 프로젝트 <span class="text-primary"> 3 unread alerts!</span></h6>
+                <div class="team_icon"></div>
+                  <h3 class="team_name"><%="팀이름" %></h3> <br>
+                  <h6 class="team_attri"><%="팀 설명" %></h6> <br>
                 </div>
                 <div class="col-12 col-xl-4">
                  <div class="justify-content-end d-flex">
@@ -404,59 +503,30 @@ input#content {
                   </div>
                  </div>
                 </div>
+                 <div class="menutap"> <br>
+                 <ul type="none" id="menutap">
+                 	<li><a href="#">홈</li>
+                 	<li><a href="#">업무</li>
+                 	<li><a href="#">캘린더</li>
+                 </ul>
+                 </div>
+              </div>
+              <div class="content">
+              	<div class="newContentsBox">
+              		<div>
+              			<ul class="newContentsBox">
+              				<li class="newContentsBox"><button type="button" id="yongdal_open">글</button></li>
+              				<li class="newContentsBox"><button type="button" id="yongdal_open">업무</button></li>
+              				<li class="newContentsBox"><button type="button" id="yongdal_open">일정</button></li>
+              				<li class="newContentsBox"><button type="button" id="yongdal_open">할 일</button></li>
+              			</ul>
+              		</div>
+              	</div>
               </div>
             </div>
           </div>
           
-            <div class="col-md-6 grid-margin transparent">
-              <div class="row">
-               <%
-              	/* memberDAO dao = new memberDAO();
-              	ArrayList<teamDTO> arr = dao.selectTeam(); */
-              	
-              	for(int i = 0; i < 3; i++){
-              		out.print("<div class='col-md-6 mb-4 stretch-card transparent'>");
-              		out.print("<div class='card card-tale'>");
-              		out.print("<div class='card-body'>");
-              		out.print("<p class='fs-30 mb-2'>" + i + "</p>");
-              		out.print("<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>");
-              		out.print("</div>");
-              		out.print("</div>");
-              		out.print("</div>");
-              	}
-              %>
-                <div class="col-md-6 mb-4 stretch-card transparent">
-                  <div class="card card-dark-blue">
-                    <div class="card-body">
-                      <p class="mb-4">project 2</p>
-                      <p class="fs-30 mb-2">A프로젝트</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
-                  <div class="card card-light-blue">
-                    <div class="card-body">
-                      <p class="mb-4">새프로젝트</p>
-                      <p class="fs-30 mb-2">만들기</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 stretch-card transparent">
-                  <div class="card card-light-danger">
-                    <div class="card-body">
-                      <p class="mb-4">새프로젝트 </p>
-                      <p class="fs-30 mb-2">만들기</p>
-                      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+            
       <!-- main-panel ends -->
     </div>   
     <!-- page-body-wrapper ends -->
@@ -486,9 +556,8 @@ input#content {
   <!-- End custom js for this page-->
 
 
-  <!-- modal -->
-  <div style="display: inline">
-  <form action="projectPage.jsp">
+  <!-- MODAL -->
+	<div style="display: inline">
   <div id="modal" class="modal_content">
         <div class="modal_content">
             <div class="title">
@@ -510,33 +579,87 @@ input#content {
         </div>
         <div class="modal_layer"></div>
     </div>
-    </form>
   </div>
+  
+  
+  <!-- 게시글 modal 창 -->
+  
+  <div style="display: inline">
+  <div id="modal" class="modal_content">
+        <div class="modal_content">
+            <div class="title">
+                <h2>게시물 작성</h2>
+            </div>
+            <button type="button" id="yongdal_close">X</button>
+            <div class="content">
+                <input type = "text" id="title" placeholder="제목을 입력하세요.">
+                <input type = "text" id="content" placeholder="내용을 입력하세요.">
+                <br>
+                <br>
+                <div id="button">
+                    <button id="submit" type="submit">올리기</button>
+                </div>
+
+                
+                
+            </div>
+        </div>
+        <div class="modal_layer"></div>
+    </div>
+  </div>
+  
+  
   <!-- modal scipt -->
   <script src ="js/jquery-3.6.0.min.js"></script>
 <script>
-    document.getElementById("modal_open_btn").onclick = function() {
-        document.getElementById("modal").style.display="block";
-    }
-   
-    document.getElementById("modal_close_btn").onclick = function() {
-        document.getElementById("modal").style.display="none";
-    }   
+document.getElementById("modal_open_btn").onclick = function() {
+	    document.getElementById("modal").style.display="block";
+	}
+	
+	document.getElementById("modal_close_btn").onclick = function() {
+	    document.getElementById("modal").style.display="none";
+}   
 </script>
 
 
 
 <script>
-    $("#modal_open_btn").click(function(){
-        $("#modal").attr("style", "display:block");
-    });
-   
-     $("#modal_close_btn").click(function(){
-        $("#modal").attr("style", "display:none");
-    });      
+$("#yongdal_open").click(function(){
+    $("#modal").attr("style", "display:block");
+});
+
+ $("#yongdal_close").click(function(){
+    $("#modal").attr("style", "display:none");
+});      
+ </script>
+ 
+ 
+ 
+<!--  게시글 작성 modal  -->
+ 
+ 
+<script>
+document.getElementById("yongdal_open").onclick = function() {
+    document.getElementById("modal").style.display="block";
+}
+
+document.getElementById("yongdal_close").onclick = function() {
+    document.getElementById("modal").style.display="none";
+}   
 </script>
 
 
-  
+
+<script>
+$("#yongdal_open").click(function(){
+    $("#modal").attr("style", "display:block");
+});
+
+ $("#modal_close_btn").click(function(){
+    $("#modal").attr("style", "display:none");
+});      
+
+</script>
+
 </body>
 </html>
